@@ -1,0 +1,256 @@
+{
+  "train_window": "2025-01-01..2025-12-31",
+  "test_window": "2026-01-01..2026-10-31",
+  "n_train": 8760,
+  "n_test": 7296,
+  "thermal_mustrun_mw": {
+    "lignite": 2470.7,
+    "hard_coal": 251.8,
+    "gas": 1056.9,
+    "oil": 92.1
+  },
+  "C1_coeffs": {
+    "a": -5.801,
+    "b": 1.0133
+  },
+  "B2_coeffs": [
+    3.5834,
+    3.1714,
+    0.1326
+  ],
+  "C2_params": {
+    "avail_scale": 1.0,
+    "eff_shift": 0.02,
+    "surplus_price": 0.0,
+    "scarcity_u0": 0.9,
+    "scarcity_gamma": 5.0
+  },
+  "realised": {
+    "train_mean": 89.32,
+    "test_mean": 114.0,
+    "test_negative_share": 0.065
+  },
+  "metrics": {
+    "M0_stack": {
+      "test": {
+        "n": 7296,
+        "mae": 27.057,
+        "rmse": 42.467,
+        "bias": -18.959,
+        "corr": 0.84
+      },
+      "train": {
+        "n": 8760,
+        "mae": 17.653,
+        "rmse": 28.655,
+        "bias": 4.554,
+        "corr": 0.84
+      },
+      "test_negative_hours": {
+        "precision": 0.325,
+        "recall": 0.998,
+        "realised_count": 497,
+        "model_count": 1526
+      }
+    },
+    "M0_trade_exog": {
+      "test": {
+        "n": 7296,
+        "mae": 35.938,
+        "rmse": 51.708,
+        "bias": -12.134,
+        "corr": 0.752
+      },
+      "train": {
+        "n": 8760,
+        "mae": 29.614,
+        "rmse": 45.55,
+        "bias": 8.541,
+        "corr": 0.603
+      },
+      "test_negative_hours": {
+        "precision": 0.838,
+        "recall": 0.511,
+        "realised_count": 497,
+        "model_count": 303
+      }
+    },
+    "C1_linear_2025": {
+      "test": {
+        "n": 7296,
+        "mae": 29.54,
+        "rmse": 44.678,
+        "bias": -23.498,
+        "corr": 0.84
+      },
+      "train": {
+        "n": 8760,
+        "mae": 17.243,
+        "rmse": 28.284,
+        "bias": 0.0,
+        "corr": 0.84
+      },
+      "test_negative_hours": {
+        "precision": 0.323,
+        "recall": 0.998,
+        "realised_count": 497,
+        "model_count": 1535
+      }
+    },
+    "C2_structural_2025": {
+      "test": {
+        "n": 7296,
+        "mae": 29.117,
+        "rmse": 44.53,
+        "bias": -22.977,
+        "corr": 0.84
+      },
+      "train": {
+        "n": 8760,
+        "mae": 17.019,
+        "rmse": 28.408,
+        "bias": 0.562,
+        "corr": 0.84
+      },
+      "test_negative_hours": {
+        "precision": 0.325,
+        "recall": 0.998,
+        "realised_count": 497,
+        "model_count": 1526
+      }
+    },
+    "C3_rolling90_linear": {
+      "test": {
+        "n": 7296,
+        "mae": 22.072,
+        "rmse": 36.41,
+        "bias": -7.651,
+        "corr": 0.863
+      },
+      "train": {},
+      "test_negative_hours": {
+        "precision": 0.309,
+        "recall": 0.296,
+        "realised_count": 497,
+        "model_count": 475
+      }
+    },
+    "B1_flat_ccgt_srmc": {
+      "test": {
+        "n": 7296,
+        "mae": 50.268,
+        "rmse": 74.313,
+        "bias": 31.077,
+        "corr": 0.309
+      },
+      "train": {
+        "n": 8760,
+        "mae": 37.456,
+        "rmse": 54.867,
+        "bias": 20.165,
+        "corr": 0.207
+      },
+      "test_negative_hours": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "realised_count": 497,
+        "model_count": 0
+      }
+    },
+    "B2_ols_resload_srmc": {
+      "test": {
+        "n": 7296,
+        "mae": 38.613,
+        "rmse": 53.18,
+        "bias": -31.349,
+        "corr": 0.793
+      },
+      "train": {
+        "n": 8760,
+        "mae": 17.534,
+        "rmse": 25.585,
+        "bias": 0.0,
+        "corr": 0.871
+      },
+      "test_negative_hours": {
+        "precision": 0.681,
+        "recall": 0.755,
+        "realised_count": 497,
+        "model_count": 551
+      }
+    }
+  },
+  "regimes": {
+    "M0_stack": {
+      "negative_price": {
+        "n": 474.0,
+        "mae": 16.48,
+        "rmse": 54.62,
+        "bias": 16.48,
+        "corr": 0.01,
+        "mean_realised": -16.4,
+        "mean_model": 0.09
+      },
+      "normal": {
+        "n": 6457.0,
+        "mae": 25.31,
+        "rmse": 35.17,
+        "bias": -18.79,
+        "corr": 0.82,
+        "mean_realised": 114.6,
+        "mean_model": 95.81
+      },
+      "scarcity_top5pct": {
+        "n": 365.0,
+        "mae": 71.66,
+        "rmse": 101.42,
+        "bias": -67.94,
+        "corr": 0.18,
+        "mean_realised": 272.79,
+        "mean_model": 204.85
+      }
+    },
+    "C3_rolling90_linear": {
+      "negative_price": {
+        "n": 474.0,
+        "mae": 24.01,
+        "rmse": 56.75,
+        "bias": 22.7,
+        "corr": 0.11,
+        "mean_realised": -16.4,
+        "mean_model": 6.3
+      },
+      "normal": {
+        "n": 6457.0,
+        "mae": 20.2,
+        "rmse": 28.46,
+        "bias": -8.36,
+        "corr": 0.86,
+        "mean_realised": 114.6,
+        "mean_model": 106.24
+      },
+      "scarcity_top5pct": {
+        "n": 365.0,
+        "mae": 52.75,
+        "rmse": 89.4,
+        "bias": -34.58,
+        "corr": 0.11,
+        "mean_realised": 272.79,
+        "mean_model": 238.21
+      }
+    }
+  },
+  "marginal_tech_share_test": {
+    "gas_ccgt": 0.3564,
+    "hard_coal": 0.2035,
+    "lignite": 0.1649,
+    "surplus": 0.161,
+    "gas_peaker": 0.0632,
+    "lignite_mustrun": 0.0308,
+    "gas_ccgt_mustrun": 0.0079,
+    "gas_peaker_mustrun": 0.0053,
+    "hard_coal_mustrun": 0.0032,
+    "oil": 0.0029,
+    "oil_mustrun": 0.0008
+  }
+}

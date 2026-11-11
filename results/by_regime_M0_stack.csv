@@ -1,0 +1,4 @@
+,n,mae,rmse,bias,corr,mean_realised,mean_model
+negative_price,474.0,16.48,54.62,16.48,0.01,-16.4,0.09
+normal,6457.0,25.31,35.17,-18.79,0.82,114.6,95.81
+scarcity_top5pct,365.0,71.66,101.42,-67.94,0.18,272.79,204.85
